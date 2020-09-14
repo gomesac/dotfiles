@@ -17,6 +17,10 @@ call plug#begin('~/.vim/plugged')
   Plug 'jparise/vim-graphql'
   Plug 'vim-python/python-syntax'
   Plug 'junegunn/fzf'
+  Plug 'junegunn/fzf.vim'
+  Plug 'preservim/nerdtree'
+  Plug 'Xuyuanp/nerdtree-git-plugin'
+  Plug 'airblade/vim-gitgutter'
   Plug 'morhetz/gruvbox'
 
 call plug#end()
@@ -28,6 +32,10 @@ colorscheme gruvbox
 set background=dark
 set termguicolors
 set ttymouse=xterm2 " Allow mouse drag 
+if !has('gui_running')
+  set t_Co=256
+endif
+set noshowmode
 
 "=================== Search ===================" 
 set hlsearch " Highlight the search
@@ -66,12 +74,12 @@ set vb t_vb= " Removes annyoing beeps when bad command
 set noswapfile " Disable creating .swp files
 set laststatus=2
 
-"=================== Netrw ===================" 
-let g:netrw_banner = 0 " Remove the banner in the Network Directory 
-let g:netrw_liststyle = 3 " Network Directory default to list view 3
-let g:netrw_browse_split = 2 " [1-4] Open file in a vertical split(2)
-let g:netrw_altv = 1
-let g:netrw_winsize = 25 " Set the width of the directory explorer
+"=================== NERDTree ===================" 
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+let g:NERDTreeShowHidden = 1
+let g:NERDTreeGitStatusConcealBrackets = 1
 
 " Mapping Commands
 nmap <s-enter> o<esc>
@@ -99,3 +107,5 @@ inoremap ""     "
 inoremap '      ''<Left>
 inoremap '<CR>  '<CR>'<Esc>O
 inoremap ''     '
+
+map ; :Files<CR>
