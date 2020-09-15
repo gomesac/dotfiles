@@ -17,11 +17,12 @@ alias clip="clip.exe"
 alias open="explorer.exe"
 
 # Tmux alias
-alias tns="tmux new-session -t"
+alias tls="tmux list-sessions"
+alias tn="tmux new-session -t"
 alias td="tmux detach"
-alias tas="tmux attach-session -t"
-alias trs="tmux rename-session -t"
-alias tks="tmux kill-server"
+alias ta="tmux attach-session -t"
+alias tr="tmux rename-session -t"
+alias tksa="tmux kill-server"
 alias tkst="tmux kill-session -t"
 
 # Bash alias
