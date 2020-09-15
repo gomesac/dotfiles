@@ -25,6 +25,7 @@ alias tks="tmux kill-server"
 alias tkst="tmux kill-session -t"
 
 # Bash alias
+alias cp="cp -v"
 alias ls="ls -a"
 export LESSOPEN="| src-hilite-lesspipe.sh %s"
 export LESS=" -R "

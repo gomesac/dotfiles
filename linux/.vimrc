@@ -6,22 +6,20 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
+  Plug 'morhetz/gruvbox'
   Plug 'itchyny/lightline.vim'
   Plug 'vim-airline/vim-airline'
   
   """ Syntax plugins
-  Plug 'pangloss/vim-javascript'
-  Plug 'MaxMEllon/vim-jsx-pretty'
-  Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
-  Plug 'elzr/vim-json'
-  Plug 'jparise/vim-graphql'
-  Plug 'vim-python/python-syntax'
+  Plug 'dense-analysis/ale'
+
   Plug 'junegunn/fzf'
   Plug 'junegunn/fzf.vim'
   Plug 'preservim/nerdtree'
   Plug 'Xuyuanp/nerdtree-git-plugin'
   Plug 'airblade/vim-gitgutter'
-  Plug 'morhetz/gruvbox'
+  Plug 'mg979/vim-visual-multi', { 'branch': 'master' }
+  Plug 'tpope/vim-surround'
 
 call plug#end()
 
