@@ -1,5 +1,6 @@
 export TERM=xterm-256color
 export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/dev-scripts:$PATH
 
 export ZSH="/home/andre/.oh-my-zsh"
 ZSH_THEME="gruvbox"
@@ -13,7 +14,7 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 # Windows applications alias
-alias clip="clip.exe"
+alias clip="clip.exe <"
 alias open="explorer.exe"
 
 # Tmux alias
@@ -27,7 +28,7 @@ alias tkst="tmux kill-session -t"
 
 # Bash alias
 alias cp="cp -v"
-alias ls="ls -a"
+alias lsa="ls -a"
 export LESSOPEN="| src-hilite-lesspipe.sh %s"
 export LESS=" -R "
 alias less='less -m -N -g -i -J --underline-special --SILENT'
